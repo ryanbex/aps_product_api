@@ -1,0 +1,27 @@
+{
+  "name": "product",
+  "version": "1.0.0",
+  "description": "Product API for All Pool Spa",
+  "main": "product.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node product.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ryanbex/aps_product_api.git"
+  },
+  "keywords": [
+    "swimming",
+    "pool",
+    "product"
+  ],
+  "author": "Ryan Beck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryanbex/aps_product_api/issues"
+  },
+  "homepage": "https://github.com/ryanbex/aps_product_api#readme"
+}
