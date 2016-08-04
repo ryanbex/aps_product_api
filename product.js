@@ -1,14 +1,7 @@
 "use strict";
-
-var mongoose = require('mongoose');
 var valpak = require('./valpak_aps.json')
 var ProductModel = require('./models/models');
 var ProductSchema = require('./schemas/productSchema');
-
-mongoose.connect('mongodb://ryanDev:p8r8g0n@ds011913.mlab.com:11913/allpoolspa/catalog');
-
-
-
 
 /* Product API
 endpoints:
@@ -36,7 +29,7 @@ var Product = {
 	add costs
 	delete product
 
-	*Separate different user profiles: Admin, Basic
+	Separate different user profiles: Admin, Basic
 	*/
 	insertMany : function(afile) {
 		ProductModel.collection.insertMany(afile, function(err, result) {
@@ -106,7 +99,6 @@ var Product = {
 			{'manufacturer':{$regex:manufacturer}, 'cost':{$gte:minPrice, $lte:maxPrice}}, 
 			'cost', function(err, product) {
 				if (err) throw err;
-				console.log(product);
 				return product;
 			}
 		);
@@ -116,6 +108,12 @@ var Product = {
 			if (err) throw err;
 			console.log(product);
 			return product;
+		});
+	},
+	all : function(sku) {
+		ProductModel.findOne({}, function(err, products) {
+			if (err) throw err;
+			return products;
 		});
 	}
 };
